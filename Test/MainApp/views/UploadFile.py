@@ -22,7 +22,8 @@ class UploadFile(generics.CreateAPIView):
         manual_parameters=[openapi.Parameter(name="Token", in_="header", type=openapi.IN_HEADER, required=True,
                                              description="Токен поссылается в заголовках, в поле Authorization в виде Token (сам токен)")],
         request_body=openapi.Schema(type=openapi.TYPE_OBJECT, properties={
-            'file_name': openapi.Schema(type=openapi.TYPE_STRING, description="name file")
+            'file_name': openapi.Schema(type=openapi.TYPE_STRING, description="name file"),
+            'file': openapi.Schema(type=openapi.TYPE_FILE, description='file')
         }),
         consumes=['application/json'],
         responses={200: 'OK',

@@ -24,8 +24,10 @@ class GetFile(generics.ListAPIView):
                                              description="необезательный параметр, если нужно получить 1 файл")],
         consumes=['application/json'],
         responses={200: openapi.Schema(type=openapi.TYPE_OBJECT, properties={
-            'files': openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_STRING,
-                                                                                  description="если было отправлено file_name, то придет file, иначе придет массив file_name и file"))
+            'files': openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_OBJECT, properties={
+                'file_name': openapi.Schema(type=openapi.TYPE_STRING, description='file name'),
+                'file': openapi.Schema(type=openapi.TYPE_FILE, description='file')
+            }, description="если было отправлено file_name, то придет file, иначе придет массив file_name и file"))
         }),
                    401: "Permission denied",
                    500: "Server error"},

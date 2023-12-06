@@ -17,8 +17,7 @@ class Login(generics.CreateAPIView):
     serializer_class = AuntificationSerializers
 
     @swagger_auto_schema(
-        request_body=openapi.Schema(type=openapi.TYPE_OBJECT, properties={
-            "file_name": openapi.Schema(type=openapi.TYPE_STRING, description="file_name")}),
+        request_body=AuntificationSerializers,
         consumes=['application/json'],
         responses={200: openapi.Schema(type=openapi.TYPE_OBJECT, properties={
             'token': openapi.Schema(type=openapi.TYPE_STRING,
