@@ -1,0 +1,5 @@
+venv
+deploy
+.idea
+__pycache__
+redis-data

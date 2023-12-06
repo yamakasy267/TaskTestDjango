@@ -1,0 +1,2 @@
+ROLE_USER = 'User'
+USER_STATUS_ENABLED = 'enabled'
