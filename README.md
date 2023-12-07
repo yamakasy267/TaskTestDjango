@@ -5,6 +5,10 @@
 - перейти в папку проекта и прописать следующие команды
 - docker-compose up
 - docker-compose run app python Test/manage.py migrate
+- docker-compose run app python Test/manage.py createsuperuser
+
+После этого необходимо зайти в админку джанги и добавить записи в таблицы бд Roles и UserStatus
+В ролес необходимо добавить роль User, а в UserStatus - enabled
 
 В проекте присутсвует свагер:
     localhost:8000/api/v1
